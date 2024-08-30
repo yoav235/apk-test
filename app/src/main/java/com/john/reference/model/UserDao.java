@@ -24,6 +24,4 @@ public interface UserDao {
     @Query("SELECT * FROM users")
     LiveData<List<UserModel>> getAllUsers();
 
-//    @Insert(onConflict = OnConflictStrategy.REPLACE)
-//    void insertAll(List<User> users);
 }
