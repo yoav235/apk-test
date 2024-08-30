@@ -1,6 +1,7 @@
-package com.john.reference;
+package com.john.reference.model;
 
 import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class UserResponse {

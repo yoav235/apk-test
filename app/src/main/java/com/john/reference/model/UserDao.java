@@ -1,4 +1,4 @@
-package com.john.reference;
+package com.john.reference.model;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;

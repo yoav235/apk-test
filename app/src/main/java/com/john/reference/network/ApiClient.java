@@ -1,4 +1,4 @@
-package com.john.reference;
+package com.john.reference.network;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

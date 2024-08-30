@@ -1,4 +1,4 @@
-package com.john.reference;
+package com.john.reference.view;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,6 +13,10 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.john.reference.R;
+import com.john.reference.viewmodel.UserViewModel;
+import com.john.reference.model.UserModel;
 
 import java.util.List;
 

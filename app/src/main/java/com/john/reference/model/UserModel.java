@@ -1,4 +1,4 @@
-package com.john.reference;
+package com.john.reference.model;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -23,43 +23,43 @@ public class UserModel {
     private String avatar;
 
     // Getters and Setters for all fields...
-    int getId() {
+    public int getId() {
         return id;
     }
 
-    void setId(int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    String getEmail() {
+    public String getEmail() {
         return email;
     }
 
-    void setEmail(String email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    String getFirst_name() {
+    public String getFirst_name() {
         return first_name;
     }
 
-    void setFirst_name(String first_name) {
+    public void setFirst_name(String first_name) {
         this.first_name = first_name;
     }
 
-    String getLast_name() {
+    public String getLast_name() {
         return last_name;
     }
 
-    void setLast_name(String last_name) {
+    public void setLast_name(String last_name) {
         this.last_name = last_name;
     }
 
-    String getAvatar() {
+    public String getAvatar() {
         return avatar;
     }
 
-    void setAvatar(String avatar) {
+    public void setAvatar(String avatar) {
         this.avatar = avatar;
     }
 }

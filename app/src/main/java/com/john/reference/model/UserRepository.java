@@ -1,9 +1,12 @@
-package com.john.reference;
+package com.john.reference.model;
 
 import android.app.Application;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Room;
+
+import com.john.reference.network.ApiClient;
+import com.john.reference.network.ApiService;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;

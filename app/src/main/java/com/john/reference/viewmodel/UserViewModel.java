@@ -1,9 +1,12 @@
-package com.john.reference;
+package com.john.reference.viewmodel;
 
 import android.app.Application;
 
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
+
+import com.john.reference.model.UserModel;
+import com.john.reference.model.UserRepository;
 
 import java.util.List;
 

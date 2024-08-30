@@ -1,4 +1,6 @@
-package com.john.reference;
+package com.john.reference.network;
+import com.john.reference.model.UserResponse;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 
