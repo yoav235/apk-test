@@ -32,7 +32,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
@@ -62,5 +61,6 @@ dependencies {
 
     annotationProcessor ("com.github.bumptech.glide:compiler:4.11.0")
 
+    implementation("com.google.android.material:material:1.8.0")
 
 }

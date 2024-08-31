@@ -4,16 +4,19 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.john.reference.R;
 import com.john.reference.viewmodel.UserViewModel;
 import com.john.reference.model.UserModel;
@@ -43,6 +46,27 @@ public class MainActivity extends AppCompatActivity {
                 userView.setUsers(users);
             }
         });
+
+        // Initialize and handle the dark mode switch
+        SwitchMaterial darkModeSwitch = findViewById(R.id.switch_dark_mode);
+        darkModeSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                } else {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                }
+            }
+        });
+
+        //
+        int currentNightMode = getResources().getConfiguration().uiMode & android.content.res.Configuration.UI_MODE_NIGHT_MASK;
+        if (currentNightMode == android.content.res.Configuration.UI_MODE_NIGHT_YES) {
+            darkModeSwitch.setChecked(true);
+        } else {
+            darkModeSwitch.setChecked(false);
+        }
 
         // Find the buttons
         Button addButton = findViewById(R.id.btn_add_user);
@@ -75,6 +99,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
+
     }
 
     private void showAddUserDialog() {
@@ -91,6 +118,8 @@ public class MainActivity extends AppCompatActivity {
 
         final AlertDialog dialog = builder.create();
 
+//        here first i created UserModel object and used it's setters to fill the data
+//        i realized that wasn't in line with MVVM architecture and moved this function to the model.
         buttonSave.setOnClickListener(v -> {
             String firstName = editTextFirstName.getText().toString().trim();
             String lastName = editTextLastName.getText().toString().trim();
@@ -118,9 +147,10 @@ public class MainActivity extends AppCompatActivity {
         final EditText editTextLastName = dialogView.findViewById(R.id.editTextLastName);
         final EditText editTextEmail = dialogView.findViewById(R.id.editTextEmail);
         final EditText editTextAvatar = dialogView.findViewById(R.id.editTextAvatar);
+
+//        had the same problem as showAddUserDialog, fixed it the same way.
         Button buttonSave = dialogView.findViewById(R.id.buttonSave);
 
-        // Pre-fill the dialog with the selected user's current information
         editTextFirstName.setText(selectedUser.getFirst_name());
         editTextLastName.setText(selectedUser.getLast_name());
         editTextEmail.setText(selectedUser.getEmail());

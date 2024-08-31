@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".view.MainActivity">
 
-    <!-- Toolbar -->
+    <!-- Toolbar with Dark Mode Switch -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="0dp"
@@ -16,9 +16,30 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:elevation="4dp"
-        app:title="User List"
-        app:titleTextColor="@android:color/white" />
+        android:elevation="4dp">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User List"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp"
+            android:layout_alignParentStart="true" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switch_dark_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dark Mode"
+            android:textColor="@android:color/white"
+            android:layout_gravity="end"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="16dp" />
+
+    </androidx.appcompat.widget.Toolbar>
 
     <!-- RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
@@ -42,8 +63,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:gravity="center"
+        android:gravity="start"
         android:padding="16dp">
+
+
 
         <Button
             android:id="@+id/btn_add_user"
@@ -55,7 +78,7 @@
             android:id="@+id/btn_update_user"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Update User"
+            android:text="Update\n User"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp" />
 
@@ -68,16 +91,9 @@
     </LinearLayout>
 
 
-<!--    &lt;!&ndash; Floating Action Button for adding a new user &ndash;&gt;-->
-<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--        android:id="@+id/fab_add_user"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_margin="16dp"-->
-<!--        android:contentDescription="Add User"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:backgroundTint="?attr/colorPrimary"-->
-<!--        app:tint="@android:color/white" />-->
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
