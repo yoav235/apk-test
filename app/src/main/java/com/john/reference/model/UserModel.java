@@ -23,7 +23,7 @@ public class UserModel {
     private String avatar;
 
     // Getters and Setters for all fields...
-    int getId() {
+    public int getId() {
         return id;
     }
 
@@ -31,7 +31,7 @@ public class UserModel {
         this.id = id;
     }
 
-    String getEmail() {
+    public String getEmail() {
         return email;
     }
 
@@ -39,7 +39,7 @@ public class UserModel {
         this.email = email;
     }
 
-    String getFirst_name() {
+    public String getFirst_name() {
         return first_name;
     }
 
@@ -47,7 +47,7 @@ public class UserModel {
         this.first_name = first_name;
     }
 
-    String getLast_name() {
+    public String getLast_name() {
         return last_name;
     }
 
@@ -55,7 +55,7 @@ public class UserModel {
         this.last_name = last_name;
     }
 
-    String getAvatar() {
+    public String getAvatar() {
         return avatar;
     }
 
