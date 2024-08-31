@@ -8,6 +8,7 @@
     <color name="textColor">#000000</color>
 
 <!--  dark theme  -->
+    <!-- Primary brand color for the app -->
     <color name="primaryColorDark">#BB86FC</color>
     <color name="primaryDarkColorDark">#3700B3</color>
     <color name="accentColorDark">#03DAC5</color>
