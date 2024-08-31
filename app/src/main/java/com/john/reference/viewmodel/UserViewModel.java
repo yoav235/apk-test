@@ -20,12 +20,12 @@ public class UserViewModel extends AndroidViewModel {
         allUsers = repository.getAllUsers();
     }
 
-    public void insert(UserModel user) {
-        repository.insert(user);
+    public void insert(String firstName, String lastName, String email, String avatar) {
+        repository.insert(firstName, lastName, email, avatar);
     }
 
-    public void update(UserModel user) {
-        repository.update(user);
+    public void update(String firstName, String lastName, String email, String avatar, UserModel selectedUser) {
+        repository.update(firstName, lastName, email, avatar, selectedUser);
     }
 
     public void delete(UserModel user) {

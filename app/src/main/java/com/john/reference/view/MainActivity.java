@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
         userViewModel.getAllUsers().observe(this, new Observer<List<UserModel>>() {
             @Override
             public void onChanged(List<UserModel> users) {
-                // Update RecyclerView
                 userView.setUsers(users);
             }
         });
@@ -99,12 +98,7 @@ public class MainActivity extends AppCompatActivity {
             String avatar = editTextAvatar.getText().toString().trim();
 
             if (!firstName.isEmpty() && !lastName.isEmpty() && !email.isEmpty()) {
-                UserModel newUser = new UserModel();
-                newUser.setFirst_name(firstName);
-                newUser.setLast_name(lastName);
-                newUser.setEmail(email);
-                newUser.setAvatar(avatar);
-                userViewModel.insert(newUser);
+                userViewModel.insert(firstName, lastName, email, avatar);
                 dialog.dismiss();
             } else {
                 Toast.makeText(MainActivity.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
@@ -141,13 +135,8 @@ public class MainActivity extends AppCompatActivity {
             String avatar = editTextAvatar.getText().toString().trim();
 
             if (!firstName.isEmpty() && !lastName.isEmpty() && !email.isEmpty()) {
-                selectedUser.setFirst_name(firstName);
-                selectedUser.setLast_name(lastName);
-                selectedUser.setEmail(email);
-                selectedUser.setAvatar(avatar);
 
-                // Update the user in the database
-                userViewModel.update(selectedUser);
+                userViewModel.update(firstName, lastName, email, avatar, selectedUser);
                 dialog.dismiss();
             } else {
                 Toast.makeText(MainActivity.this, "Please fill all fields", Toast.LENGTH_SHORT).show();

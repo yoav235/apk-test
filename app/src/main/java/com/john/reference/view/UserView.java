@@ -35,14 +35,12 @@ public class UserView extends RecyclerView.Adapter<UserView.UserViewHolder> {
         String name = currentUser.getFirst_name() + " " + currentUser.getLast_name();
         holder.nameTextView.setText(name);
         holder.emailTextView.setText(currentUser.getEmail());
-        // Assuming you use an image loading library like Glide or Picasso:
-        // Glide.with(holder.avatarImageView.getContext()).load(currentUser.getAvatar()).into(holder.avatarImageView);
+
         Glide.with(holder.avatarImageView.getContext())
                 .load(currentUser.getAvatar())
                 .into(holder.avatarImageView);
 
         holder.itemView.setBackgroundColor(selectedPositions.contains(position) ? Color.LTGRAY : Color.TRANSPARENT);
-        // Set up item click listener to toggle the selected position
         holder.itemView.setOnClickListener(v -> {
             if (selectedPositions.contains(holder.getAdapterPosition())) {
                 selectedPositions.remove(holder.getAdapterPosition());

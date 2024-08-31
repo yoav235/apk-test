@@ -32,12 +32,21 @@ public class UserRepository {
         apiService = ApiClient.getClient().create(ApiService.class);
     }
 
-    public void insert(UserModel user) {
+    public void insert(String firstName, String lastName, String email, String avatar) {
+        UserModel user = new UserModel();
+        user.setFirst_name(firstName);
+        user.setLast_name(lastName);
+        user.setAvatar(avatar);
+        user.setEmail(email);
         executorService.execute(() -> userDao.insert(user));
     }
 
-    public void update(UserModel user) {
-        executorService.execute(() -> userDao.update(user));
+    public void update(String firstName, String lastName, String email, String avatar, UserModel selectedUser) {
+        selectedUser.setFirst_name(firstName);
+        selectedUser.setLast_name(lastName);
+        selectedUser.setAvatar(avatar);
+        selectedUser.setEmail(email);
+        executorService.execute(() -> userDao.update(selectedUser));
     }
 
     public void delete(UserModel user) {
